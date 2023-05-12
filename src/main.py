@@ -1,8 +1,8 @@
 import random
 from timeit import timeit
 
-from merge_sort import MergeSortRecursive, MergeSortIterative, MergeSortIterativeWithStack
-from quick_sort import QuickSortRecursive, QuickSortIterative
+from sort.merge_sort import MergeSortRecursive, MergeSortIterative, MergeSortIterativeWithStack
+from sort.quick_sort import QuickSortRecursive, QuickSortIterative
 
 ELEMENT_IN_ARRAY = 1000000
 NUM_TO_RUN = 1
