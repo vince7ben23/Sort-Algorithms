@@ -15,8 +15,8 @@ implement high efficient sorting algoritms
 - Go to the location where `main.py` is <br/>
 `python -m main`
 # How to Run Test Cases
-- Go to the location where `main.py` is <br/>
+- Go to the root dir <br/>
 `python -m pytest` <br/>
-`python -m pytest -v --cov` 
+`python -m pytest -v --cov ./src/` 
 
 

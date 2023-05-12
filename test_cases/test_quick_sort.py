@@ -1,5 +1,5 @@
 import random
-from sort.quick_sort import QuickSortIterative, QuickSortRecursive
+from src.sort.quick_sort import QuickSortIterative, QuickSortRecursive
 
 def test_quick_sort_recursive():
     sample = random.sample(range(1,11), 10)

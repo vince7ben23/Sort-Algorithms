@@ -1,5 +1,5 @@
 import random
-from sort.merge_sort import MergeSortRecursive, MergeSortIterative, MergeSortIterativeWithStack
+from src.sort.merge_sort import MergeSortRecursive, MergeSortIterative, MergeSortIterativeWithStack
 
 def test_merge_sort_recursive():
     sample = random.sample(range(1,11), 10)
