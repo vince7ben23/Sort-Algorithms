@@ -6,7 +6,7 @@ implement high efficient sorting algoritms
 
 # Setup Python Environment
 - Creating an environment from the environment.yml file <br/>
-`conda env create -f environment.yml -p <the location of your conda env>`
+`conda env create -f environment.yml -p <the location of your conda env>` <br/>
 `conda env create -f environment.yml -n <your conda env name>`
 - Export your active environment to a new file <br/>
 `conda env export > environment.yml`
