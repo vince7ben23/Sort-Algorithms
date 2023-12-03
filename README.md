@@ -2,7 +2,6 @@
 implement high efficient sorting algoritms 
 - merge sort
 - quick sort
-- heap sort
 
 # Setup Python Environment
 - Creating an environment from the environment.yml file <br/>
