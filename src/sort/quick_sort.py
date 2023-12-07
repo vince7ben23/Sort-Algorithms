@@ -1,4 +1,7 @@
-class QuickSortRecursive:
+from  random import randint
+
+
+class QuickSortRecursiveLomuto:
     """quick sort with Lomuto partition
     
     steps: pivot(partition), sort, then divid
@@ -19,7 +22,7 @@ class QuickSortRecursive:
 
     @staticmethod
     def _lomuto_partition(arr: list, left: int, right: int) -> int:
-        """_summary_
+        """Lomuto's partition
 
         refer to https://rust-algo.club/sorting/quicksort/
 
@@ -32,6 +35,9 @@ class QuickSortRecursive:
             int : the returned index of the pivot
         """
         return_pivot_index = left
+        # optimization tips: randomly pick a pivot, then put it to the righmost side
+        m = randint(left, right)
+        arr[right], arr[m] = arr[m], arr[right]
 
         for ind in range(left, right+1):
             # use the rightmost element as pivot
@@ -43,7 +49,7 @@ class QuickSortRecursive:
         arr[right], arr[return_pivot_index] = arr[return_pivot_index], arr[right]
         return return_pivot_index
 
-class QuickSortIterative:
+class QuickSortIterativeLomuto:
     """quick sort with a iterative appoach
     """
     @classmethod
@@ -78,6 +84,10 @@ class QuickSortIterative:
     @staticmethod
     def _lomuto_partition(arr: list, left: int, right: int) -> int:
         ind_final_pivot = left
+        
+        # optimization tips: randomly pick a pivot, then put it to the righmost side
+        m = randint(left, right)
+        arr[right], arr[m] = arr[m], arr[right]
 
         for ind in range(left, right+1):
             if arr[ind] < arr[right]:
@@ -109,17 +119,20 @@ class QuickSortRecursiveHoare:
 
     @staticmethod
     def _hoare_partition(arr: list, left: int, right: int) -> int:
-        pivot = arr[(left + right) // 2]
+        # optimization tips: pick the pivot randomly 
+        # m = (left + right) // 2
+        m = randint(left, right)
+        pivot = arr[m]
+
         l_ptr = left
         r_ptr = right
 
         while True:
-            while arr[l_ptr] < pivot:
-                l_ptr += 1
-            while arr[r_ptr] > pivot:
-                r_ptr -= 1
-            if l_ptr >= r_ptr:
-                return r_ptr
+            while arr[l_ptr] < pivot: l_ptr += 1
+            while arr[r_ptr] > pivot: r_ptr -= 1
+            
+            if l_ptr >= r_ptr: return r_ptr
+            
             arr[l_ptr], arr[r_ptr] = arr[r_ptr], arr[l_ptr]
             l_ptr += 1
             r_ptr -= 1
